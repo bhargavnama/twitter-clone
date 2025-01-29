@@ -29,7 +29,7 @@ export const createPost = async (req, res) => {
     });
 
     await newPost.save();
-    res.status(201).json({ message: "Post created successfully" });
+    res.status(201).json(newPost);
   } catch (error) {
     console.error(`Error in createPost controller: ${error}`);
     res.status(500).json({ message: "Internal Server Error" });
@@ -58,6 +58,8 @@ export const deletePost = async (req, res) => {
     res.status(200).json({ message: "Post deleted successfully" });
   } catch (error) {
     console.error(`Error in deletePost controller: ${error.message}`);
+    res.status(500).json({ message: "Internal Server Error" });
+
   }
 };
 
