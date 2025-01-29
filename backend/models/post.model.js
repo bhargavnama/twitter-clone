@@ -9,7 +9,7 @@ const postModel = new mongoose.Schema({
     text: {
         type: String,
     },
-    image: {
+    img: {
         type: String
     },
     likes: [
